@@ -2,12 +2,8 @@
   <div class="overflow-x-hidden">
     <router-view />.
     <NavBar></NavBar>
+<div class="background-hero"></div>
 
-    <img
-      src="./assets/images/house_main.png"
-      class="sm:w-[100%] md:w-[50%] absolute right-0 top-0 z-[-1] lg:flex hidden lg:h-[auto] "
-      alt
-    />
     <MainPage></MainPage>
     <!-- <house></house> -->
     <Recomendation></Recomendation>
@@ -45,4 +41,22 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.background-hero {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 55%;
+  height: 650px;
+  background-image: url('./assets/images/house_main.png');
+  background-size: cover;
+  background-position: top right;
+  background-repeat: no-repeat;
+  z-index: -1;
+  pointer-events: none;
+}
+
+
+</style>
 

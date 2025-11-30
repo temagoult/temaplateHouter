@@ -346,13 +346,6 @@ export default {
   margin-bottom: 1rem;
 }
 
-.beforTag {
-  width: 32px;
-  height: 2px;
-  background: linear-gradient(90deg, #10b981 0%, #3b82f6 100%);
-  margin-right: 0.75rem;
-  border-radius: 2px;
-}
 
 
 .ouRecomendationTag:hover {

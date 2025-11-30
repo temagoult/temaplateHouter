@@ -203,9 +203,9 @@ export default {
 </script>
 
 <style scoped>
-/* Hero Section */
+
 .hero-section {
-  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  background: transparent !important;
   position: relative;
   overflow: hidden;
 }

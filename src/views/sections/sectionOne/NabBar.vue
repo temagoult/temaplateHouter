@@ -1,76 +1,87 @@
 <template>
-  <div class="w-[100%]">
-    <div class="myContainer flex flex-col">
-      <div class="navBarbox flex justify-between z-10 pb-9 items-center">
-        <div class="logo">
-          <img src="../../../assets/images/logo(1).svg" alt />
-          <div>hounter</div>
-        </div>
-        <div class="navList sm:flex hidden gap-[50px]">
-          <div>
-            <ul class="list-none flex gap-6 items-center">
-              <li>about us</li>
-              <li>article</li>
-              <li>
-                Property
-                <img class="cursor-pointer" src="../../../assets/images/arrow.svg" alt />
-              </li>
-            </ul>
-          </div>
+  <div class="w-full fixed top-0 left-0 z-50 backdrop-blur-xl bg-white/20 shadow-md">
+    <div class="myContainer flex justify-between items-center py-4">
 
-          <div class="flex items-center">
-            <div class="signUp">sign Up!</div>
-          </div>
-        </div>
-        <div class="sm:hidden">
-          <div v-if="display">
-            <div @click="onDisplay">
-              <i class="fa-solid fa-xmark text-[14px] text-[#047857]"></i>
-            </div>
-          </div>
-
-          <div v-else class="items-center">
-            <div @click="onDisplay">
-              <i class="fa-solid fa-bars text-[14px] text-[#047857]"></i>
-            </div>
-          </div>
-        </div>
+      <!-- LOGO -->
+      <div class="logo flex items-center gap-3 cursor-pointer">
+        <img src="../../../assets/images/logo(1).svg" class="w-8" alt="">
+        <span class="font-extrabold text-[#1E293B] text-xl uppercase tracking-wide">
+          Hounter
+        </span>
       </div>
-      <div v-if="display" class="text-start pb-5">
-        <ul class="list-none flex flex-col gap-6 p-0 m-0 text-[#047857] listBar cursor-pointer">
-          <li
-            class="border-gray-400 border-[1px] border-solid text-end border-x-transparent border-t-transparent"
-          >ARTICLE</li>
-          <li
-            class="border-gray-400 border-[1px] border-solid text-end border-x-transparent border-t-transparent"
-          >PROPERTY</li>
-          <li
-            class="border-gray-400 border-[1px] border-solid text-end border-x-transparent border-t-transparent"
-          >ABOUT</li>
-          <li
-            class="border-gray-400 border-[1px] border-solid text-end border-x-transparent border-y-transparent"
-          >SignUp</li>
+
+      <!-- Desktop Menu -->
+      <div class="navList hidden sm:flex items-center gap-12">
+
+        <ul class="flex gap-8 items-center font-medium text-[#1E293B]">
+          <li class="navItem hover:text-[#10B981] transition">About Us</li>
+          <li class="navItem hover:text-[#10B981] transition">Article</li>
+          
+          <li class="flex items-center gap-1 navItem hover:text-[#10B981] transition cursor-pointer">
+            Property
+            <img src="../../../assets/images/arrow.svg" class="w-3" />
+          </li>
+        </ul>
+
+        <button class="bg-[#10B981] hover:bg-[#059669] text-white px-6 py-2 rounded-full shadow-md transition">
+          Sign Up
+        </button>
+      </div>
+
+      <!-- Mobile Burger -->
+      <div class="sm:hidden text-[#047857] text-xl cursor-pointer" @click="toggleMenu">
+        <i :class="display ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'"></i>
+      </div>
+
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <transition name="fade">
+      <div v-if="display" class="sm:hidden bg-white/90 backdrop-blur-xl shadow-lg py-4">
+        <ul class="flex flex-col gap-4 px-6 text-[#047857] font-semibold">
+
+          <li class="border-b pb-2">About Us</li>
+          <li class="border-b pb-2">Article</li>
+          <li class="border-b pb-2">Property</li>
+          <li class="pt-2">Sign Up</li>
+
         </ul>
       </div>
-    </div>
+    </transition>
+
   </div>
 </template>
-  
+
 <script>
 export default {
+  name: "NavBar",
   data() {
     return {
       display: false
     };
   },
-  name: "NavBar",
   methods: {
-    onDisplay() {
+    toggleMenu() {
       this.display = !this.display;
-      console.log(this.display);
     }
   }
 };
 </script>
-<style>
+
+<style scoped>
+.navItem {
+  cursor: pointer;
+  font-size: 15px;
+  text-transform: capitalize;
+}
+
+/* Mobile menu fade animation */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity .3s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
 </style>
