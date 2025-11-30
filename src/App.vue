@@ -5,7 +5,7 @@
 
     <img
       src="./assets/images/house_main.png"
-      class="sm:w-[100%] md:w-[50%] absolute right-0 top-0 z-[-1] lg:flex hidden lg:h-[auto]"
+      class="sm:w-[100%] md:w-[50%] absolute right-0 top-0 z-[50] lg:flex hidden lg:h-[auto] "
       alt
     />
     <MainPage></MainPage>
