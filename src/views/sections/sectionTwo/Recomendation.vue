@@ -3,7 +3,7 @@
     <!-- Section Header -->
     <div class="titreSection flex items-center sm:flex-row flex-col">
       <div class="beforTag"></div>
-      <div class="ouRecomendationTag md:p-3 sm:p-2 p-1 md:text-[14px] sm:text-[12px] text-[10px]">
+      <div     class="ouRecomendationTag md:p-3 sm:p-2 p-1 md:text-[14px] sm:text-[12px] text-[10px]">
         Our Recommendation
       </div>
     </div>
@@ -354,15 +354,6 @@ export default {
   border-radius: 2px;
 }
 
-.ouRecomendationTag {
-  background: linear-gradient(135deg, #f0fdf4 0%, #dbeafe 100%);
-  color: #059669;
-  border-radius: 8px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  border: 1px solid #a7f3d0;
-  transition: all 0.3s ease;
-}
 
 .ouRecomendationTag:hover {
   transform: translateY(-2px);
